@@ -1,0 +1,115 @@
+body  {
+  background-color: #333;
+  color: #eee;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 13pt;
+  line-height: 18pt;
+  font-weight: normal;
+}
+
+
+h1, h3 {
+  font-family: 'Crimson Text', sans-serif;
+}
+
+.graphic-title  {
+  margin-bottom: 40px;
+}
+
+.graphic-container {
+  max-width: 800px;
+  margin: auto;
+  /*margin-bottom: 400px;*/
+}
+
+.credit {
+	float: right;
+	font-size: 8pt;
+	color: #aaa;
+}
+
+.big-number-container {
+  width: 33%;
+  margin: auto;
+  float: left;
+  margin-bottom: 3em;
+}
+
+.big-number {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 42pt;
+	font-weight: lighter;
+	line-height: 8pt;
+	text-align: center;
+}
+
+.big-number-description {
+	font-size: 10pt;
+	line-height: 12pt;
+	text-align: center;
+	font-weight: lighter;
+  width: 60%;
+  margin: auto;
+}
+
+.hydro-map {
+  width: 100%;
+}
+
+.timber-map-container {
+  width: 60%;
+  margin: auto; /*margin-left: 12.5%;*/
+}
+
+.timber-map {
+  width: 100%;
+  margin: auto;
+}
+
+.shipyards-map-container {
+  width: 35%;
+  float: left;
+}
+
+.shipyards-map {
+  width: 100%;
+}
+
+.ships-chart-container {
+  width: 65%;
+  float: left;
+}
+
+
+.species-map-container  {
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.species-map {
+  width: 100%;
+  margin: auto;
+}
+
+.cleanups-map-container  {
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.cleanups-map {
+  width: 100%;
+  margin: auto;
+}
+
+.training-map-container  {
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.training-map {
+  width: 100%;
+  margin: auto;
+}

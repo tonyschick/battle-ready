@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  	<meta charset="utf-8">
+  	<title>Hanford claims</title>
+  	<meta name="description" content="">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="http://www.opb.org/s/vendor/jquery/jquery-1.7.1.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
+  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/vendor/modernizr.js"></script>
+  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/foundation.min.js"></script>
+
+
+  <!-- <link href='https://fonts.googleapis.com/css?family=Meie+Script' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/ui-lightness/jquery-ui.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div class="row">
+
+  <div class="medium-offset-1 medium-10">
+    <h5>Occupational illnesses claims from nuclear workers</h5>
+    <div id="worker-claims" style="height: 300px"></div>
+    <p class="credit">Source: Department of Labor</p>
+  </div>
+</div>
+
+</body>
+<script>
+
+$(function () {
+    Highcharts.chart('worker-claims', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['Hanford', 'All others']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        exporting: {
+        		enabled: false
+        },
+        credits: {
+        		enabled: false
+        },
+        tooltip: {
+        		enabled: false,
+        },
+        series: [{
+            name: 'Claims',
+            data: [16353, 161799]
+        }, {
+            name: 'Payments',
+            data: [11622, 95407]
+        }]
+    });
+});
+
+</script>

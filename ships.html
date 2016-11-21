@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+  	<meta charset="utf-8">
+  	<title>WWII Ships</title>
+  	<meta name="description" content="">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="http://www.opb.org/s/vendor/jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/vendor/modernizr.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+
+<div class="graphic-container">
+    <h1>What they built</h1>
+    <p>In a five-year span, Northwest shipyards built more than 1500 vessels for the U.S. military.</p>
+
+      <div class="shipyards-map-container">
+        <img class="shipyards-map" src="assets/shipbuilding-yards-01.png"/>
+        <small class="credit">Emergency shipbuilders in the NW</small>
+      </div>
+
+      <div class="ships-chart-container" style="margin-bottom: 3em;">
+        <div id="shipbuilding-chart" style="margin-top: 20px; height: 420px;"></div>
+      </div>
+
+    <h1>What they broke</h1>
+    <p>In the post-war era, shipyards in Portland and Tacoma dismantled more than TK tons worth of WWII ships.</p>
+
+    <div class="shipyards-map-container">
+      <img class="shipyards-map" src="assets/shipbreaking-yards-01.png"/>
+    </div>
+
+    <div class="ships-chart-container">
+      <div id="shipbreaking-chart" style="margin-top: 20px; height: 420px;"></div>
+    </div>
+    <p class="credit">Sources: Shipbuildinghistory.com, Zidell Marine Corporation</p>
+</div>
+
+
+<script src="js/chart-settings.js"></script>
+<script type="text/javascript">
+    $(function () {
+        Highcharts.chart('shipbuilding-chart', {
+
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'WWII Ships Built by Emergency Builders in NW'
+            },
+            xAxis: {
+                categories: ['Liberty ship (cargo)', 'Tractor/Tug', 'Victory ship (cargo)', 'Tanker', 'Landing craft', 'Barge/Lighter', 'Other cargo/freighter', 'Sub chaser', 'Minesweeper', 'Net Layer', 'Dry-Dock', 'Cable Boat', 'Passenger boat', 'Launch', 'Patrol boat', 'Tender/Destroyer', 'Escort Carrier'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ' ',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            plotOptions: {
+                fillOpacity: 0.5,
+                bar: {
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            legend: {
+            		enabled: false,
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                color: "#45637c",
+                borderColor: 'none',
+                name: 'Ships built',
+                data: [346, 291, 175, 148, 141, 139, 108, 45, 34, 21, 15, 10, 10, 8, 7, 2, 1]
+            }]
+        });
+    });
+
+    $(function () {
+        Highcharts.chart('shipbreaking-chart', {
+            chart: {
+                type: 'bar'
+            },
+            exporting: {
+                enabled: false
+            },
+            title: {
+                text: 'Ships broken by major NW dismantling sites'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['Liberty ship (cargo)', 'Destroyer', 'Landing craft', 'Other cargo/freighter', 'Submarine', 'Cruiser', 'Patrol craft', 'Barge/Lighter', 'Aircraft carrier', 'Victory ship (cargo)', 'Escort carrier', 'Net layer', 'Repair ship', 'Tanker', 'Minesweeper', 'Transport', 'Frigate', 'Sub chaser', 'Coast Guard Cutter', 'Hospital ship', 'Tractor/Tug', 'Undocumented vessel 242,842', 'Auxiliary vessel', 'Forebody only', 'Barracks ship',],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ' ',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ''
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: false
+                    }
+                }
+            },
+            legend: {
+                enabled: false,
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                color: "#45637c",
+                borderColor: 'none',
+                opacity: 0.25,
+                name: 'Ships broken',
+                data: [89, 31, 23, 20, 10, 10, 8, 7, 7, 6, 6, 6, 4, 4, 4, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1]
+            }]
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

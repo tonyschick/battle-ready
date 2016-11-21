@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+  	<meta charset="utf-8">
+  	<title>Whidbey Personnel</title>
+  	<meta name="description" content="">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="http://www.opb.org/s/vendor/jquery/jquery-1.7.1.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
+  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/vendor/modernizr.js"></script>
+  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/foundation.min.js"></script>
+
+
+  <!-- <link href='https://fonts.googleapis.com/css?family=Meie+Script' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/ui-lightness/jquery-ui.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div class="row">
+
+  <div class="medium-offset-1 medium-10">
+    <h5>Estimated personnel at Whidbey Island Naval Air Station</h5>
+    <div id="personnel" style="height: 300px"></div>
+    <p class="credit">Source: Naval Air Station Whidbey Island</p>
+  </div>
+</div>
+
+</body>
+
+<script>
+$(function () {
+    Highcharts.chart('personnel', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        exporting: {
+       			enabled: false
+        },
+        credits: {
+        		enabled: false
+        },
+        tooltip: {
+        		enabled: false,
+        },
+        xAxis: {
+            categories: ['2016', '2018', '2019']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Personnel'
+            }
+        },
+        legend: {
+            align: 'right',
+            x: -30,
+            verticalAlign: 'top',
+            y: 25,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+            borderColor: '#CCC',
+            borderWidth: 1,
+            shadow: false
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal',
+
+            }
+        },
+        legend: {
+        	enabled: false
+        },
+        series: [{
+            name: 'Civilian',
+            data: [2400, 2400, 2400]
+        }, {
+            name: 'Military',
+            data: [15840, 17160, 19580]
+        }]
+    });
+});
+</script>

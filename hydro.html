@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+  	<meta charset="utf-8">
+  	<title>WWII Hydropower</title>
+  	<meta name="description" content="">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="http://www.opb.org/s/vendor/jquery/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/vendor/modernizr.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+
+<div class="graphic-container">
+  <h1>Rivers and war</h1>
+  <p>During the war, hydropower dams on the Columbia River fueled steel mills and shipyards that build vessels for war. Dams produced enough electricity to make nearly 70,000 airplanes and 5,000 ships and tanks during a five year period. Hydropower use continued to rise in the post-war boom. Today, more than 80 percent of all hydropower is generated on the west coast.</p>
+
+  <!-- For light backgrounds -->
+  <!-- <img class="hydro-map" src="assets/hydropower.png"/> -->
+
+  <!-- For dark backgrounds -->
+  <img class="hydro-map" src="assets/hydropower-white-text.png"/>
+
+  <small class="credit">Hydropower dams in red.</small>
+
+  <div id="hydro-chart" style="margin-top: 20px; height: 320px;"></div>
+  <p class="credit">Sources: U.S. Army Corps of Engineers, U.S. Energy Information Administration, U.S. Geological Survey</p>
+</div>
+
+
+<script src="js/chart-settings.js"></script>
+<script type="text/javascript">
+
+
+$(function () {
+    Highcharts.chart('hydro-chart', {
+
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Hydropower generated in the U.S.'
+        },
+
+        xAxis: {
+            categories: ['1900', '1901', '1902', '1903', '1904', '1905', '1906', '1907', '1908', '1909', '1910', '1911', '1912', '1913', '1914', '1915', '1916', '1917', '1918', '1919', '1920', '1921', '1922', '1923', '1924', '1925', '1926', '1927', '1928', '1929', '1930', '1931', '1932', '1933', '1934', '1935', '1936', '1937', '1938', '1939', '1940', '1941', '1942', '1943', '1944', '1945', '1946', '1947', '1948', '1949', '1950', '1951', '1952', '1953', '1954', '1955', '1956', '1957', '1958', '1959', '1960', '1961', '1962', '1963', '1964', '1965', '1966', '1967', '1968', '1969', '1970', '1971', '1972', '1973', '1974', '1975'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Megawatts produced'
+            },
+            //opposite: true,
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            }
+        },
+        tooltip: {
+        	borderColor: 'none',
+
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#fff',
+                lineWidth: 1,
+                marker: {
+                    enabled: false,
+                    lineWidth: 0,
+                    lineColor: '#fff'
+                }
+            }
+        },
+        series: [{
+            name: 'Hydropower',
+            color: '#1f78b4',
+            fillOpacity: '0.5',
+            data: [10.5, 4, 2.4, 29.6, 32.7, 35.7, 32.9, 109.2, 42.5, 71.2, 165.3, 137.8, 135.2, 360.9, 178.9, 258.3, 176.9, 270.6, 151.8, 312.2, 157.4, 283, 171, 379.4, 502.6, 710.1, 289.4, 422.7, 973.8, 253.5, 830.4, 604.9, 208.2, 35.7, 37.5, 53.1, 788.2, 334.9, 676.7, 448, 404.1, 731.5, 1125.8, 1078, 1054.6, 398.7, 55.7, 170.4, 812.7, 1294.8, 1191.2, 1395.3, 1697.8, 1901.8, 1292.1, 1764.2, 1203.1, 1502.5, 2835.3, 1742.3, 1601.6, 3441.3, 2584.2, 3441.7, 2309.4, 2120.3, 1576.4, 3938.8, 2891.1, 2029.2, 1591.5, 1412.4, 634.7, 5870.4, 1405.8, 2552.8 ]
+        }]
+    });
+});
+
+</script>
+
+
+</body>
+</html>
