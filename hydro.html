@@ -21,10 +21,10 @@
   <p>During the war, hydropower dams on the Columbia River powered shipbuilders and the aluminum smelters making the raw material for Boeing's B-17. Dams produced enough electricity to make nearly 70,000 airplanes and 5,000 ships and tanks during the war. Hydropower use continued to rise in the post-war industrial boom. Today, more than half of all hydropower in the U.S. is generated on the West Coast.</p>
 
   <!-- For light backgrounds -->
-  <!-- <img class="hydro-map" src="assets/hydropower.png"/> -->
+  <img class="hydro-map" src="assets/hydropower.png"/>
 
   <!-- For dark backgrounds -->
-  <img class="hydro-map" src="assets/hydropower-white-text.png"/>
+  <!-- <img class="hydro-map" src="assets/hydropower-white-text.png"/> -->
 
   <small class="credit">Hydropower dams in red.</small>
 
@@ -57,11 +57,7 @@ $(function () {
                 text: 'Megawatts produced'
             },
             //opposite: true,
-            labels: {
-                formatter: function () {
-                    return this.value / 1000;
-                }
-            }
+
         },
         tooltip: {
         	borderColor: 'none',
@@ -81,8 +77,7 @@ $(function () {
         },
         series: [{
             name: 'Hydropower',
-            color: '#1f78b4',
-            fillOpacity: '0.5',
+            color: 'rgba(69,99,124,0.85)',
             data: [10.5, 4, 2.4, 29.6, 32.7, 35.7, 32.9, 109.2, 42.5, 71.2, 165.3, 137.8, 135.2, 360.9, 178.9, 258.3, 176.9, 270.6, 151.8, 312.2, 157.4, 283, 171, 379.4, 502.6, 710.1, 289.4, 422.7, 973.8, 253.5, 830.4, 604.9, 208.2, 35.7, 37.5, 53.1, 788.2, 334.9, 676.7, 448, 404.1, 731.5, 1125.8, 1078, 1054.6, 398.7, 55.7, 170.4, 812.7, 1294.8, 1191.2, 1395.3, 1697.8, 1901.8, 1292.1, 1764.2, 1203.1, 1502.5, 2835.3, 1742.3, 1601.6, 3441.3, 2584.2, 3441.7, 2309.4, 2120.3, 1576.4, 3938.8, 2891.1, 2029.2, 1591.5, 1412.4, 634.7, 5870.4, 1405.8, 2552.8 ]
         }]
     });

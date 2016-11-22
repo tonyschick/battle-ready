@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <head>
   	<meta charset="utf-8">
-  	<title>Whidbey Personnel</title>
+  	<title>Hanford Claims</title>
   	<meta name="description" content="">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script src="http://www.opb.org/s/vendor/jquery/jquery-1.7.1.min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-
-	<script src="http://d3js.org/colorbrewer.v1.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
   <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/vendor/modernizr.js"></script>
-  <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/foundation.min.js"></script>
-
-
-  <!-- <link href='https://fonts.googleapis.com/css?family=Meie+Script' rel='stylesheet' type='text/css'> -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/ui-lightness/jquery-ui.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/chart-settings.js"></script>
 
   <script src="https://code.highcharts.com/highcharts.js"></script>
-</head>
-<body>
-<div class="row">
 
-  <div class="medium-offset-1 medium-10">
-    <h5>Estimated personnel at Whidbey Island Naval Air Station</h5>
-    <div id="personnel" style="height: 300px"></div>
-    <p class="credit">Source: Naval Air Station Whidbey Island</p>
-  </div>
-</div>
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+
+<div id="personnel" style="height: 300px"></div>
+<p class="credit">Source: Naval Air Station Whidbey Island</p>
+
 
 </body>
 
@@ -40,7 +31,7 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: ''
+            text: 'Estimated personnel at Whidbey Island Naval Air Station'
         },
         exporting: {
        			enabled: false
@@ -78,12 +69,14 @@ $(function () {
             }
         },
         legend: {
-        	enabled: false
+            enabled: true
         },
         series: [{
+            color: 'rgba(51,72,93,0.5)',
             name: 'Civilian',
             data: [2400, 2400, 2400]
         }, {
+            color: 'rgba(51,72,93,0.75)',
             name: 'Military',
             data: [15840, 17160, 19580]
         }]
