@@ -37,27 +37,29 @@ $(function () {
             type: "treemap",
             layoutAlgorithm: 'stripes',
             alternateStartingDirection: true,
+            plotOptions:  {
+              dataLabels: {
+                  enabled: true,
+                  align: 'left',
+                  verticalAlign: 'top',
+                  style: {
+                      fontSize: '15px',
+                      color: '#fff',
+                      fontWeight: 'light',
+                      // textBorder: 'red',
+                      textShadow: 'none'
+
+                  }
+              }
+            },
             levels: [{
                 level: 1,
                 layoutAlgorithm: 'sliceAndDice',
-                dataLabels: {
-                    enabled: true,
-                    align: 'left',
-                    verticalAlign: 'top',
-                    style: {
-                        fontSize: '15px',
-                        color: '#fff',
-                        fontWeight: 'light',
-                        // textBorder: 'red',
-                        textShadow: 'none'
-
-                    }
-                }
             }],
             data: [{
                 id: 'A',
                 name: 'Hanford',
-                color: 'rgba(51,72,93,0.75)'
+                color: 'rgba(51,72,93,0.75)',
             }, {
                 id: 'B',
                 name: 'All other nuclear sites',
@@ -88,5 +90,52 @@ $(function () {
         }
     });
 });
+
+// $(function () {
+//     Highcharts.chart('worker-claims', {
+//         chart: {
+//             type: 'bar'
+//         },
+//         title: {
+//             text: 'Occupational illnesses claims from nuclear workers'
+//         },
+//         xAxis: {
+//             categories: ['Hanford', 'All other sites']
+//         },
+//         yAxis: {
+//             min: 0,
+//             title: {
+//                 text: ''
+//             }
+//         },
+//         legend: {
+//             enabled: true,
+//             reversed: true
+//         },
+//         plotOptions: {
+//             series: {
+//                 stacking: 'normal'
+//             }
+//         },
+//         exporting: {
+//         		enabled: false
+//         },
+//         credits: {
+//         		enabled: false
+//         },
+//         tooltip: {
+//         		enabled: false,
+//         },
+//         series: [{
+//             color: 'rgba(51,72,93,0.5)',
+//             name: 'All claims',
+//             data: [16353, 161799]
+//         }, {
+//             color: 'rgba(51,72,93,0.75)',
+//             name: 'Claims receiving payment',
+//             data: [11622, 95407]
+//         }]
+//     });
+// });
 
 </script>

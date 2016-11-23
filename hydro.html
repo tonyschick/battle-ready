@@ -18,7 +18,7 @@
 
 <div class="graphic-container">
   <h1>Rivers and war</h1>
-  <p>During the war, hydropower dams on the Columbia River powered shipbuilders and the aluminum smelters making the raw material for Boeing's B-17. Dams produced enough electricity to make nearly 70,000 airplanes and 5,000 ships and tanks during the war. Hydropower use continued to rise in the post-war industrial boom. Today, more than half of all hydropower in the U.S. is generated on the West Coast.</p>
+  <p>Columbia River hydroelectric dams powered WWII-era shipbuilders and smelters that made aluminum for Boeing's B-17. It was enough to make nearly 70,000 airplanes and 5,000 ships and tanks during the war. Hydropower rose in the post-war industrial boom. Today the West Coast generates most of the country’s hydropower.</p>
 
   <!-- For light backgrounds -->
   <img class="hydro-map" src="assets/hydropower.png"/>
@@ -37,14 +37,12 @@
 
 $(function () {
     Highcharts.chart('hydro-chart', {
-
         chart: {
             type: 'area'
         },
         title: {
             text: 'Hydropower generated in the U.S.'
         },
-
         xAxis: {
             categories: ['1900', '1901', '1902', '1903', '1904', '1905', '1906', '1907', '1908', '1909', '1910', '1911', '1912', '1913', '1914', '1915', '1916', '1917', '1918', '1919', '1920', '1921', '1922', '1923', '1924', '1925', '1926', '1927', '1928', '1929', '1930', '1931', '1932', '1933', '1934', '1935', '1936', '1937', '1938', '1939', '1940', '1941', '1942', '1943', '1944', '1945', '1946', '1947', '1948', '1949', '1950', '1951', '1952', '1953', '1954', '1955', '1956', '1957', '1958', '1959', '1960', '1961', '1962', '1963', '1964', '1965', '1966', '1967', '1968', '1969', '1970', '1971', '1972', '1973', '1974', '1975'],
             tickmarkPlacement: 'on',
