@@ -7,7 +7,6 @@
 
 	<script src="http://www.opb.org/s/vendor/jquery/jquery-1.7.1.min.js"></script>
   <script type="text/javascript" src="http://www.opb.org/s/vendor/foundation/js/vendor/modernizr.js"></script>
-  <script src="js/chart-settings.js"></script>
 
   <script src="https://code.highcharts.com/highcharts.js"></script>
 
@@ -28,6 +27,7 @@
 
 </body>
 
+<script src="js/chart-settings.js"></script>
 <script src="https://code.highcharts.com/modules/treemap.js"></script>
 <script>
 
@@ -35,27 +35,48 @@ $(function () {
     Highcharts.chart('worker-claims', {
         series: [{
             type: "treemap",
-            layoutAlgorithm: 'stripes',
+            // layoutAlgorithm: 'strip',
             alternateStartingDirection: true,
-            plotOptions:  {
-              dataLabels: {
-                  enabled: true,
-                  align: 'left',
-                  verticalAlign: 'top',
-                  style: {
-                      fontSize: '15px',
-                      color: '#fff',
-                      fontWeight: 'light',
-                      // textBorder: 'red',
-                      textShadow: 'none'
-
-                  }
-              }
-            },
             levels: [{
                 level: 1,
                 layoutAlgorithm: 'sliceAndDice',
-            }],
+                  dataLabels: {
+                      enabled: true,
+                      align: 'left',
+                      verticalAlign: 'top',
+                      style: {
+                          fontSize: '15px',
+                          color: '#fff',
+                          fontWeight: 'light',
+                          textShadow: 'none'
+
+                      }
+                  }
+            },
+            {
+                level: 2,
+                layoutAlgorithm: 'stripes',
+                dataLabels: {
+                    enabled: true,
+                    align: 'center',
+                    verticalAlign: 'middle',
+                    //y:200,
+
+
+                    style: {
+                        fontSize: '10px',
+                        fontWeight: 'bold',
+                        color: 'white'
+                    },
+                    formatter: function(){
+
+                        return '<b>' + this.point.name + '</b> <br/>' + numberWithCommas(this.point.value) + '';
+                    }
+                 }
+            }
+
+
+          ],
             data: [{
                 id: 'A',
                 name: 'Hanford',
@@ -65,28 +86,31 @@ $(function () {
                 name: 'All other nuclear sites',
                 color: 'rgba(51,72,93,0.75)'
             }, {
-                name: 'Unpaid',
+                name: 'Claims unpaid',
                 parent: 'A',
                 value: 16353
             }, {
-                name: 'Paid',
+                name: 'Claims paid',
                 parent: 'A',
                 value: 11622,
                 color: 'rgba(51,72,93,0.5)'
             }, {
-                name: 'Unpaid',
+                name: 'Claims unpaid',
                 parent: 'B',
                 value: 161799
             }, {
-                name: 'Paid',
+                name: 'Claims paid',
                 parent: 'B',
                 value: 95407,
                 color: 'rgba(51,72,93,0.5)'
 
             }]
         }],
+        tooltip: {
+          enabled: false
+        },
         title: {
-            text: 'Nuclear Site Compensation Claims'
+            text: 'Worker Illness Claims At U.S. Nuclear Sites'
         }
     });
 });
@@ -137,5 +161,9 @@ $(function () {
 //         }]
 //     });
 // });
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 </script>
