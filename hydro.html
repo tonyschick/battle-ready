@@ -21,15 +21,21 @@
   <p>Columbia River hydroelectric dams powered WWII-era shipbuilders and smelters that made aluminum for Boeing's B-17. Nationally, dams generated enough power to make nearly 70,000 airplanes and 5,000 ships and tanks during the war. Hydropower rose in the post-war industrial boom. Today the West Coast generates most of the country’s hydropower.</p>
 
   <!-- For light backgrounds -->
-  <img class="hydro-map" src="assets/hydropower.png"/>
+  <div class="hydro-map">
+    <h4>Before WWII</h4>
+    <img style="width: 100%;" src="assets/hydropower_before.png"/>
+  </div>
+  <div class="hydro-map">
+    <h4>Since start of WWII</h4>
+    <img style="width: 100%;" src="assets/hydropower_after.png"/>
+  </div>
 
-  <!-- For dark backgrounds -->
-  <!-- <img class="hydro-map" src="assets/hydropower-white-text.png"/> -->
+  <small class="credit">Hydropower dams in red. Sources: U.S. Army Corps of Engineers, U.S. Energy Information Administration, U.S. Geological Survey</p>
+</small>
 
-  <small class="credit">Hydropower dams in red.</small>
+  <div id="hydro-chart" style="margin-top: 20px; height: 320px;">
+  </div>
 
-  <div id="hydro-chart" style="margin-top: 20px; height: 320px;"></div>
-  <p class="credit">Sources: U.S. Army Corps of Engineers, U.S. Energy Information Administration, U.S. Geological Survey</p>
 </div>
 
 <script src="js/chart-settings.js"></script>
