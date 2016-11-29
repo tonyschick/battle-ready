@@ -22,16 +22,11 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 <body>
-<div class="row">
-
-  <div class="medium-offset-1 medium-10">
-    <h5>Flights by Electronic Attack Wing in Olympic Military Operating Area</h5>
     <div id="growler-flights" style="height: 300px"></div>
     <p class="credit">Source: Naval Air Station Whidbey Island</p>
-  </div>
-</div>
 
 </body>
+<script src="js/chart-settings.js"></script>
 <script>
 $(function () {
     Highcharts.chart('growler-flights', {
@@ -47,7 +42,7 @@ $(function () {
             }
         },
 				title: {
-            text: '',
+            text: 'Flights by Electronic Attack Wing in Olympic Military Operating Area',
         },
         credits: {
         	enabled: false
