@@ -33,11 +33,11 @@
     <p>In the post-war era, shipyards in Portland and Tacoma dismantled hundreds of World War II vessels.</p>
 
     <div class="shipyards-map-container">
-      <img class="shipyards-map" src="assets/shipbreaking-yards.png"/>
+      <img class="shipyards-map" style="margin-top: 3em;" src="assets/shipbreaking-yards.png"/>
     </div>
 
     <div class="ships-chart-container">
-      <div id="shipbreaking-chart" style="margin-top: 20px; height: 420px;"></div>
+      <div id="shipbreaking-chart" style="margin-top: 20px; height: 480px;"></div>
     </div>
     <p class="credit">Sources: Shipbuildinghistory.com, Zidell Marine Corporation</p>
 </div>
@@ -88,7 +88,7 @@
                 enabled: false
             },
             series: [{
-                color: 'rgba(51,72,93,0.75)',
+                color: 'rgba(236,14,27,0.75)',
                 borderColor: 'none',
                 name: 'Ships built',
                 data: [346, 291, 175, 148, 141, 139, 108, 45, 34, 21, 15, 10, 10, 8, 7, 3]
@@ -111,7 +111,7 @@
                 text: ''
             },
             xAxis: {
-                categories: ['Liberty ship (cargo)', 'Escort carrier', 'Landing craft', 'Other cargo/freighter', 'Submarine', 'Cruiser', 'Patrol craft', 'Barge/Lighter', 'Aircraft carrier', 'Victory ship (cargo)', 'Other escort carrier', 'Net layer', 'Repair ship', 'Tanker', 'Minesweeper', 'Transport', 'Frigate', 'Sub chaser', 'Coast Guard Cutter', 'Hospital ship', 'Tractor/Tug', 'Undocumented vessel 242,842', 'Auxiliary vessel', 'Forebody only', 'Barracks ship',],
+                categories: ["Liberty ship (cargo)", "Other cargo/freighter", "Destroyer", "Landing craft", "Submarine", "Cruiser", "Victory ship (cargo)", "Aircraft carrier", "Patrol craft", "Attack transport", "Tanker", "Barge/Lighter", "Repair ship", "Net layer", "Escort carrier", "Attack Cargo Ship", "Transport", "Minesweeper", "Frigate", "Seaplane Tender", "Tractor/Tug", "Sub chaser", "Heavy Cruiser", "Hospital ship", "Coast Guard Cutter", "Barracks ship", "Command ship", "Surveying ship"],
                 title: {
                     text: null
                 }
@@ -143,11 +143,11 @@
                 enabled: false
             },
             series: [{
-                color: 'rgba(51,72,93,0.75)',
+                color: 'rgba(236,14,27,0.75)',
                 borderColor: 'none',
                 opacity: 0.25,
                 name: 'Ships broken',
-                data: [89, 31, 23, 20, 10, 10, 8, 7, 7, 6, 6, 6, 4, 4, 4, 4, 3, 2, 1, 1, 1, 1, 1, 1, 1]
+                data: [157, 37, 33, 24, 10, 10, 10, 8, 8, 8, 7, 7, 7, 6, 6, 5, 4, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1]
             }]
         });
     });
